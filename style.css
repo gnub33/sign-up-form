@@ -1,0 +1,77 @@
+/* global */
+h2,
+p{
+    font-family: 'Comfortaa', cursive;
+
+}
+
+#brand-name,
+label {
+    font-family: 'Permanent Marker', cursive;
+}
+
+.image-container{
+    background-image: url("assets/honbike-h3J5fReb6tY-unsplash.jpeg");
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    float:left;
+    width: 40vw;
+}
+
+.image-credit{
+    background-color: hsla(0, 0%, 0%, .5);
+    /* background-color: black; */
+    color: white;
+    position: absolute;
+    border-radius: 10px;
+    padding: .25em 1em;
+    bottom: 10px;
+    left: 15px;
+    font-size:.75rem;
+}
+
+.form-section{
+    background-color: rgb(187, 187, 187);
+    height: 100vh;
+    border: 2px solid purple;
+}
+
+.form-container{
+    background-color: whitesmoke;
+
+}
+
+form{
+    /* font-family: 'Anton', sans-serif; */
+
+    position: relative;
+    margin-top: 3.5rem;
+    padding: 1.5rem;
+    max-width: 550px;
+
+    /* grid */
+
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-rows: 10em 1em 1em 1em; */
+}
+
+label {
+    display: block;
+    color: rgb(255, 43, 43);
+}
+
+button {
+    background-color: rgb(255, 43, 43);
+    color: whitesmoke;
+    max-width: 150px;
+}
+
+form button{
+    font-family: 'Anton', sans-serif;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
