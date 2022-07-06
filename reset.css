@@ -21,11 +21,18 @@ dd {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: rgb(255, 43, 43);
+  
+}
+
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role='list'],
 ol[role='list'] {
   list-style: none;
 }
+
 
 /* Set core root defaults */
 html:focus-within {
@@ -75,3 +82,10 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+
+/* input:not(:placeholder-shown) {
+  border: 1px lightblue solid;
+} */
+
+

@@ -10,6 +10,25 @@ label {
     font-family: 'Permanent Marker', cursive;
 }
 
+.header {
+    background-color: hsla(0, 0%, 0%, .5);
+    color: whitesmoke;
+    height: 5em;
+    width: 40vw;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+img.bike-icon {
+    max-width: 100px;
+    filter: invert(100%);
+  }
+
+#brand-name {
+    margin-top: 10px;
+}
+
 .image-container{
     background-image: url("assets/honbike-h3J5fReb6tY-unsplash.jpeg");
     background-size: cover;
@@ -17,6 +36,9 @@ label {
     position: relative;
     float:left;
     width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .image-credit{
@@ -32,9 +54,8 @@ label {
 }
 
 .form-section{
-    background-color: rgb(187, 187, 187);
+    background-color: rgb(221, 221, 221);
     height: 100vh;
-    border: 2px solid purple;
 }
 
 .form-container{
@@ -58,6 +79,7 @@ form{
     /* grid-template-rows: 10em 1em 1em 1em; */
 }
 
+
 label {
     display: block;
     color: rgb(255, 43, 43);
@@ -67,11 +89,29 @@ button {
     background-color: rgb(255, 43, 43);
     color: whitesmoke;
     max-width: 150px;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.3s;
 }
 
 form button{
-    font-family: 'Anton', sans-serif;
+    font-family: 'Comfortaa', cursive; 
     letter-spacing: .25em;
     text-transform: uppercase;
     font-size: 1.2rem;
+}
+
+input:focus {
+    border: 3px solid green;
+}
+
+input {
+    box-shadow: 5px 10px 2px -5px rgba(165, 164, 164, .25); 
+}
+
+.button:hover {
+    opacity: 1;
+    border: 3px black solid;
 }

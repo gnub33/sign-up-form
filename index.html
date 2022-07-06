@@ -14,7 +14,11 @@
 <body>
 
     <div class="image-container">
-        <div id="brand-name"><h1>Barrow Bike</h1></div>
+        <div class="header">
+            <div id="brand-name"><h1>Barrow Bike</h1></div>
+            <img class="bike-icon" src="/assets/Bike_icon.png" alt="bike icon">
+        </div>
+        
         <div class="image-credit"><p>photo by Honbike at Unsplash</p></div>
     </div>
 
@@ -26,7 +30,7 @@
                 <!-- <h3>Please fill out the form below.</h3> -->
                 <p>
                     <label for="f_name">First Name</label>
-                    <input type="text" id="f_name" name="f_name">
+                    <input type="text" id="f_name" name="f_name" required>
                 </p>
                 <p>
                     <label for="l_name">Last Name</label>
@@ -35,25 +39,37 @@
                 </p>
                 <p>
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="you@example.com">
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required="">
 
                 </p>
                 <p>
                     <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone">
+                    <input type="tel" id="phone" name="phone" placeholder="(123)456-7890" required="">
                 </p>
                 <p>
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password">
+                    <input type="password" name="password" id="password" required>
                 </p>
                 <p>
                     <label for="confirm_pass">Confirm Password</label>
-                    <input type="password" id="confirm_pass" name="confirm_pass">
+                    <input type="password" id="confirm_pass" name="confirm_pass" required>
                 </p>
-                <button type="submit">Submit</button>
+                <button class="button" type="submit">Sign Up</button>
             </form> 
         </div>
+
+        <div class="log-in">
+           <p>Already have an account? <span><a href="#">Log in</a></span></p> 
+        </div>
+        
        
     </div>
 
+    <script src="form.scss" type="text/javascript"></script>
+
 </html>
+
+
+<!-- number verification
+password validation
+custom error messages -->
