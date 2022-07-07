@@ -6,38 +6,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="form.css">
     <title>Document</title>
-</head>
-<body>
-    <form action="#0">
+    <style>
 
-        <div>
-          <input type="text" id="first_name" name="first_name" required placeholder=" " />
-          <label for="first_name">First Name</label>
-        </div>
+      /* Code by codingartistweb.com */
+
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif
+}
+body {
+  height: 100vh;
+  background: linear-gradient(
+    45deg,
+    #8b51ff,
+    #7a37ff
+  )
+}
+form{
+  background-color: #fff;
+  width: 450px;
+  padding: 50px 40px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 8px;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, .15);
+}
+label{
+  font-weight: 500;
+  color: #101030;
+}
+input {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  padding: 12px;
+  border-radius: 5px;
+  outline: none;
+  color: 101010;
+}
+#password{
+  margin-bottom: 30px
+}
+input[type="submit"]{
+  background-color: #7f3fff;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+input[type="password"]{
+  border: 2px solid #c2c2c2;
+}
+p{
+  font-size: 14px;
+  margin: 15px 0;
+  display: inline-block;
+  color: #fff;
+}
+      
+
+
+
+    </style>
+</head>
+
+<body>
+    <form action="#" onsubmit="return false">
         
         <div>
-          <input type="text" id="last_name" name="last_name" required placeholder=" " />
-          <label for="last_name">Last Name</label>
-        </div>
-        
-        <div>
-          <input type="email" id="email" name="email" required placeholder=" " />
-          <label for="email">Email Address</label>
-          <div class="requirements">
-            Must be a valid email address.
-          </div>
-        </div>
-        
-        <div>
-          <input type="password" id="password" name="password" required placeholder=" " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" />
           <label for="password">Password</label>
-          <div class="requirements">
-            Your password must be at least 6 characters as well as contain at least one uppercase, one lowercase, and one number.
-          </div>
+          <input type="password" id="password" name="password" required placeholder=" " oninvalid="this.setCustomValidity('Please enter valid password')"
+          oninput="this.setCustomValidity">
+          
         </div>
         
-        <input type="submit" value="Sign Up" />
+        <div>
+          <label for="password"> Confirm Password</label>
+          <input type="password" id="confirm-password" name="confirm-password" required placeholder=" " oninvalid="this.setCustomValidity('Passwords must match')"
+          oninput="this.setCustomValidity">
+        </div>
+        <p id="message"></p>
+
+        <input type="submit" value="Submit" onclick="checkPassword()" />
       
       </form>
 </body>
+
+<script>
+function checkPassword(){
+    let pass = document.getElementById("password").value;
+    let cfmpass = document.getElementById("confirm-password").value;
+    console.log("Password:", pass,'\n',"Confirm Password:",cfmpass);
+    let message = document.getElementById("message");
+    let submit = document.querySelector('[onsubmit]');
+
+  if(pass.length != 0){
+    if(pass == cfmpass){
+      submit.onsubmit = "true";
+    } else{
+      message.textContent = "Passwords do not match";
+      message.style.backgroundColor = "#ff4d4d";
+    }
+  } else{
+    alert("Password can't be empty!");
+    message.textContent = "";
+  }
+}
+
+</script>
+
 </html>
+
+

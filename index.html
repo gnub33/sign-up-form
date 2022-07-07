@@ -26,46 +26,66 @@
         <h2>Get ready for this premier upcoming service that will take your biking experience to the next level. Soon you can experience all the joys of riding a bike without the hassle of owning one.</h2>
         <div class="form-container">
            
-            <form action="#">
+            <form action="#" onsubmit="return false">
                 <!-- <h3>Please fill out the form below.</h3> -->
-                <p>
+                <p class="input-container">
                     <label for="f_name">First Name</label>
-                    <input type="text" id="f_name" name="f_name" required>
+                    <input type="text" id="f_name" name="f_name" required placeholder=" ">
                 </p>
-                <p>
+                <p class="input-container">
                     <label for="l_name">Last Name</label>
                     <input type="text" id="l_name" name="l_name">
 
                 </p>
-                <p>
+                <p class="input-container">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="you@example.com" required="">
+                    <input type="email" id="email" name="email" required="" placeholder=" ">
 
                 </p>
-                <p>
+                <p class="input-container">
                     <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="(123)456-7890" required="">
+                    <input type="tel" id="phone" name="phone" required placeholder=" " 
+                    pattern='[0-9]{10}'"
+                    oninvalid="this.setCustomValidity('Please enter 10 digits. No dashes.')"
+                    oninput="this.setCustomValidity">
                 </p>
-                <p>
+                <p class="input-container">
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password" required>
+                    <input pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" type="password" name="password" id="password" required 
+                    title="Must contain at least one number, one uppercase letter, one lowercase letter and 8 or more characters."
+                    placeholder=" ">
+                    
+                    <!-- <div class="requirements">Password must be at least 6character</div> -->
                 </p>
-                <p>
+                
+                <p class="input-container">
                     <label for="confirm_pass">Confirm Password</label>
-                    <input type="password" id="confirm_pass" name="confirm_pass" required>
+                    <input type="password" id="confirm_pass" name="confirm_pass" required placeholder=" " onkeyup="validate_password()"
+                    title="Must match password" oninvalid="this.setCustomValidity('Passwords must match')"
+                    oninput="this.setCustomValidity"> 
+                    <p id="message2"></p>
                 </p>
-                <button class="button" type="submit">Sign Up</button>
+                <button class="button" type="submit" id="create" onclick="checkPassword()">Sign Up</button>
             </form> 
         </div>
 
-        <div class="log-in">
-           <p>Already have an account? <span><a href="#">Log in</a></span></p> 
+        <div id="message">
+            <h4>Password must contain the following:</h4>
+            <p id="letter" class="invalid">A <b>lowercase</b>letter</p>
+            <p id="capital" class="invalid">A <b>capital (uppercase)</b>letter</p>
+            <p id="number" class="invalid">A <b>number</b></p>
+            <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+
+        </div>
+
+        <div class="login">
+           <p>Already have an account? <span><a href="login.html">Log in</a></span></p> 
         </div>
         
        
     </div>
 
-    <script src="form.scss" type="text/javascript"></script>
+    <script src="script.js"></script>
 
 </html>
 
